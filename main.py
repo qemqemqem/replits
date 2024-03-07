@@ -42,8 +42,13 @@ matrix = generate_gaussian_matrix(n)
 console.print(matrix)
 console.print(is_positive_semidefinite(matrix))
 
+# Create n by n identity matrix
+identity_matrix = np.eye(n)
+console.print(identity_matrix)
+console.print(is_positive_semidefinite(identity_matrix))
+
 # Add 1 to each entry in the matrix
-matrix += 5
+matrix += identity_matrix * 3
 console.print(matrix)
 console.print(np.linalg.eigvalsh(matrix))
 console.print(is_positive_semidefinite(matrix))
